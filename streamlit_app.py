@@ -15,7 +15,7 @@ name_on_order = st.text_input("Name of Smoothie")
 st.write("The name on your smoothie will be: ", name_on_order)
 
 
-session = get_active_session()
+session = cnx.session()
 my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
