@@ -49,11 +49,6 @@ if time_ti_insert:
      session.sql(my_insert_stmt).collect()
      st.success('Your Smoothie is ordered, ' + name_on_order +'!', icon="✅")
 
-
- 
-
-
-
     # Import python packages
 import streamlit as st
 cnx = st.connection("snowflake")
@@ -95,9 +90,6 @@ if ingredients_list:
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
             values ('""" + ingredients_string + """','""" + name_on_order + """"')"""
-
-    #st.write(my_insert_stmt)
-    #st.stop()
 
     time_ti_insert = st.button('Submit Order')
 
